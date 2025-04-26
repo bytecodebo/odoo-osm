@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_decimal_precision_form">
+            <field name="name">Decimal Precision Inherit</field>
+            <field name="model">decimal.precision</field>
+            <field name="inherit_id" ref="base.view_decimal_precision_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='digits']" position="before">
+                    <!-- Add your fields or attributes here -->
+                    <field name="enable_filter" widget="boolean_toggle"/>
+                    <field name="precision_id" options="{'no_open': True, 'no_create_edit': True, 'no_create': True}"
+                    domain="[('enable_filter', '=', True)]"
+                        attrs="{'invisible': [('enable_filter', '=', True)]}"/>
+                </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_decimal_precision_tree_inherit">
+            <field name="name">Decimal Precision List Inherit</field>
+            <field name="model">decimal.precision</field>
+            <field name="inherit_id" ref="base.view_decimal_precision_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='digits']" position="after">
+                    <!-- Add your fields or attributes here -->
+                    <field name="precision_id"/>
+                    <field name="enable_filter" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+         <record model="ir.actions.act_window" id="base.action_decimal_precision_form">
+             <field name="domain">[('enable_filter', '=', False)]</field>
+        </record>
+    </data>
+</odoo>

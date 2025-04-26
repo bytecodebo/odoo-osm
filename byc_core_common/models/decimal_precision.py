@@ -26,16 +26,6 @@ class DecimalPrecision(models.Model):
                 rec.digits = digits
 
     @api.model
-    @tools.ormcache('application')
-    def precision_get(self, application):
-        # self.flush_model(['name', 'digits'])
-        # self.env.cr.execute('select digits from decimal_precision where name=%s', (application,))
-        # res = self.env.cr.fetchone()
-        # return res[0] if res else 2
-        # print(application)
-        return super().precision_get(application)
-
-    @api.model
     @tools.ormcache('self.env.company.id', 'model_name', 'field_name', 'doc_sector_id')
     def precision_dynamic_get(self, model_name, field_name, doc_sector_id):
         """ params:

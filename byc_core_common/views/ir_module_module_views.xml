@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_module_form_inherit_mms" model="ir.ui.view">
+            <field name="name">module.module.form.mms</field>
+            <field name="model">ir.module.module</field>
+            <field name="inherit_id" ref="base.module_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='to_buy']" position="after">
+                    <field name="finding_path" groups="base.group_no_one"/>
+                </xpath>
+            </field>
+        </record>
+
+         <record id="mms_module_tree" model="ir.ui.view">
+            <field name="name">mms.ir.module.module.tree</field>
+            <field name="model">ir.module.module</field>
+            <field name="inherit_id" ref="base.module_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='shortdesc']" position="before">
+                     <field name="finding_path" groups="base.group_no_one"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_module_search_inherit_mms" model="ir.ui.view">
+            <field name="name">view.module.module.search.inherit.mms</field>
+            <field name="model">ir.module.module</field>
+            <field name="inherit_id" ref="base.view_module_filter" />
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='extra']" position="after">
+                     <filter name="not_exist_path" string="No path" domain="[('finding_path', '=', False)]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
