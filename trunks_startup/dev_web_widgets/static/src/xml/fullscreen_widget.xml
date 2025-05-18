@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+    <t t-name="FullScreenControl">
+
+
+         <div class="oe_fullscreen_control">
+
+              <button t-att-data-id="widget.controlId" type="button"
+                t-att-data-res-id="widget.uniqueId" t-att-data-target-id="widget.targetId"
+                class="screen-button-extend-compress">
+                    <t t-set="isFullScreen" t-value="widget.isFullscreen || false"/>
+                 <i t-att-class="'fa' + (isFullScreen ? ' fa-compress': ' fa-expand')"></i>
+              </button>
+
+          </div>
+           <!-- <button id="btn-fullscreen" aria-label="Toggle fullscreen view" title="Toggle fullscreen view"
+               type="button" aria-pressed="false"
+                class="btn btn-sm">
+              <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2018%22%3E%3Cpath%20fill%3D%22%23111%22%20d%3D%22M0%200v6h2V2h4V0H0zm16%200h-4v2h4v4h2V0h-2zm0%2016h-4v2h6v-6h-2v4zM2%2012H0v6h6v-2H2v-4z%22/%3E%3C/svg%3E"
+              alt=""/>
+            </button>
+           <button id="oe_control_by_close_fullscreen" draggable="false"
+               aria-label="Toggle fullscreen view" title="Toggle fullscreen view"
+               type="button" aria-pressed="false"
+               class="yws-control-active">
+              <img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2018%22%3E%3Cpath%20fill%3D%22%23111%22%20d%3D%22M4%204H0v2h6V0H4v4zm10%200V0h-2v6h6V4h-4zm-2%2014h2v-4h4v-2h-6v6zM0%2014h4v4h2v-6H0v2z%22/%3E%3C/svg%3E"
+                   alt=""/>
+            </button> -->
+    </t>
+</templates>

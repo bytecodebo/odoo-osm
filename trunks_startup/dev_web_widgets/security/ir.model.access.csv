@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acc_supp_model_tst_header,acc_supp_model_tst_header group,model_web_widget_model_test,base.group_system,1,1,1,1
+acc_grp_usr_model_tst_header,acc_grp_usr_model_tst_header group,model_web_widget_model_test,base.group_user,1,0,0,0
+
